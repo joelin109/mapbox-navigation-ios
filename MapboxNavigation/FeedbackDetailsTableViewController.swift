@@ -19,7 +19,7 @@ class FeedbackDetailsTableViewController: UIViewController, UITableViewDelegate,
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0) // Do not extend table view under status bar.
+        tableView.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0) // Do not extend table view under status bar.
         // Uncomment the following line to preserve selection between presentations
         
 
@@ -47,13 +47,23 @@ class FeedbackDetailsTableViewController: UIViewController, UITableViewDelegate,
         // #warning Incomplete implementation, return the number of rows
         return 2
     }
+    
+    func tableView(_ tableView: UITableView,
+                   heightForRowAt indexPath: IndexPath) -> CGFloat {
+        switch indexPath.row {
+        case 0:
+            return 250
+        default:
+            return 70
+        }
+    }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.row {
         case 0:
             return arrivedCell(for: tableView, indexPath: indexPath)
         default:
-            return feedbackCell(for:tableView, indexPath: indexPath)
+            return feedbackCell(for: tableView, indexPath: indexPath)
         }
     }
  
