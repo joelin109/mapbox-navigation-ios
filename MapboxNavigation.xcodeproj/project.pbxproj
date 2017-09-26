@@ -121,6 +121,8 @@
 		35DC9D911F4323AA001ECD64 /* LanesContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DC9D901F4323AA001ECD64 /* LanesContainerView.swift */; };
 		35E407681F5625FF00EFC814 /* StyleKitMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E407671F5625FF00EFC814 /* StyleKitMarker.swift */; };
 		35F611C41F1E1C0500C43249 /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F611C31F1E1C0500C43249 /* FeedbackViewController.swift */; };
+		437287421F7AF0810039229F /* FeedbackDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437287411F7AF0810039229F /* FeedbackDetailsTableViewController.swift */; };
+		43AA0E321F7AFD10007D0AB1 /* IndividualFeedbackTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AA0E311F7AFD10007D0AB1 /* IndividualFeedbackTableViewController.swift */; };
 		6441B16A1EFC64E50076499F /* WaypointConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6441B1691EFC64E50076499F /* WaypointConfirmationViewController.swift */; };
 		64847A041F04629D003F3A69 /* Feedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64847A031F04629D003F3A69 /* Feedback.swift */; };
 		C5000A931EC25C6E00563EA9 /* Abbreviations.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5000A921EC25C6E00563EA9 /* Abbreviations.swift */; };
@@ -410,6 +412,8 @@
 		35DC9D901F4323AA001ECD64 /* LanesContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanesContainerView.swift; sourceTree = "<group>"; };
 		35E407671F5625FF00EFC814 /* StyleKitMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleKitMarker.swift; sourceTree = "<group>"; };
 		35F611C31F1E1C0500C43249 /* FeedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackViewController.swift; sourceTree = "<group>"; };
+		437287411F7AF0810039229F /* FeedbackDetailsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackDetailsTableViewController.swift; sourceTree = "<group>"; };
+		43AA0E311F7AFD10007D0AB1 /* IndividualFeedbackTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndividualFeedbackTableViewController.swift; sourceTree = "<group>"; };
 		6441B1691EFC64E50076499F /* WaypointConfirmationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaypointConfirmationViewController.swift; sourceTree = "<group>"; };
 		64847A031F04629D003F3A69 /* Feedback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Feedback.swift; sourceTree = "<group>"; };
 		C5000A921EC25C6E00563EA9 /* Abbreviations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Abbreviations.swift; sourceTree = "<group>"; };
@@ -632,6 +636,8 @@
 				351BEBEA1E5BCC63006FE110 /* NavigationViewController.swift */,
 				351BEBE31E5BCC63006FE110 /* RouteManeuverViewController.swift */,
 				351BEBE41E5BCC63006FE110 /* RouteMapViewController.swift */,
+				437287411F7AF0810039229F /* FeedbackDetailsTableViewController.swift */,
+				43AA0E311F7AFD10007D0AB1 /* IndividualFeedbackTableViewController.swift */,
 				351BEBE51E5BCC63006FE110 /* RoutePageViewController.swift */,
 				35C9973E1E732C1B00544D1C /* RouteVoiceController.swift */,
 				351A40151F0291D100E6D378 /* PollyVoiceController.swift */,
@@ -1354,9 +1360,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				351BEBF11E5BCC63006FE110 /* MGLMapView.swift in Sources */,
+				437287421F7AF0810039229F /* FeedbackDetailsTableViewController.swift in Sources */,
 				352BBC421E5E72C500703DF1 /* Geometry.swift in Sources */,
 				351BEC061E5BCC6C006FE110 /* ManeuverDirection.swift in Sources */,
 				35D825FC1E6A2DBE0088F83B /* MGLMapView+MGLNavigationAdditions.m in Sources */,
+				43AA0E321F7AFD10007D0AB1 /* IndividualFeedbackTableViewController.swift in Sources */,
 				351BEBFF1E5BCC63006FE110 /* StyleKitArrows.swift in Sources */,
 				351BEBF91E5BCC63006FE110 /* RouteTableViewCell.swift in Sources */,
 				351A40161F0291D100E6D378 /* PollyVoiceController.swift in Sources */,
