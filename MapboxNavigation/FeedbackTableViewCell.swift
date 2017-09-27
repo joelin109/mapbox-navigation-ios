@@ -15,7 +15,7 @@ private extension FeedbackType {
         case .accident:
             return #colorLiteral(red: 1, green: 0.1857388616, blue: 0.5733950138, alpha: 1)
         case .general:
-            return #colorLiteral(red: 0.5818830132, green: 0.2156915367, blue: 1, alpha: 1)
+            return #colorLiteral(red: 0.1019607857, green: 0.2784313858, blue: 0.400000006, alpha: 1)
         case .hazard:
             return #colorLiteral(red: 0.5808190107, green: 0.0884276256, blue: 0.3186392188, alpha: 1)
         case .roadClosed:
