@@ -205,8 +205,8 @@ class RouteMapViewController: UIViewController {
                 routePageViewController = controller
                 controller.maneuverDelegate = self
             }
-        case "FeedbackDetailsTableViewController":
-            if let navCon = segue.destination as? UINavigationController, let destination = navCon.viewControllers.first as? FeedbackDetailsTableViewController {
+        case String(describing: FeedbackOverviewTableViewController.self):
+            if let navCon = segue.destination as? UINavigationController, let destination = navCon.viewControllers.first as? FeedbackOverviewTableViewController {
                 destination.route = route
                 destination.feedbacks = routeController.feedbackEvents 
             }

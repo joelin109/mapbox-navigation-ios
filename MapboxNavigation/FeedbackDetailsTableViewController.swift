@@ -1,5 +1,5 @@
 //
-//  FeedbackDetailsTableViewController.swift
+//  FeedbackOverviewTableViewController.swift
 //  MapboxNavigation
 //
 //  Created by Jerrad Thramer on 9/26/17.
@@ -16,7 +16,7 @@ enum ReuseIdentifier: String {
 }
 
 
-class FeedbackDetailsTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class FeedbackOverviewTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     //MARK: - Models
     var route: Route? {

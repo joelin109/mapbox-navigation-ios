@@ -1,5 +1,5 @@
 //
-//  IndividualFeedbackTableViewController.swift
+//  FeedbackEventTableViewController.swift
 //  MapboxNavigation
 //
 //  Created by Jerrad Thramer on 9/26/17.
@@ -10,10 +10,7 @@ import UIKit
 
 let unwindSegueIdentifier = "unwind"
 
-class IndividualFeedbackTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
-
-
+class FeedbackEventTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var continueButton: UIButton!
     

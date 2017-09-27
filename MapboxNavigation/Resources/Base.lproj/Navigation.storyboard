@@ -236,7 +236,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="RRz-Ub-hnj" kind="presentation" identifier="FeedbackDetailsTableViewController" id="dHc-YZ-Ak2"/>
+                                    <segue destination="RRz-Ub-hnj" kind="presentation" identifier="FeedbackOverviewTableViewController" id="dHc-YZ-Ak2"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C23-DT-v2t" customClass="MBSeparatorView">
@@ -324,10 +324,10 @@
             </objects>
             <point key="canvasLocation" x="4879" y="-406"/>
         </scene>
-        <!--Feedback Details Table View Controller-->
+        <!--Feedback Overview Table View Controller-->
         <scene sceneID="G2e-8M-dfx">
             <objects>
-                <viewController id="4VN-86-9rK" customClass="FeedbackDetailsTableViewController" customModule="MapboxNavigation" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="4VN-86-9rK" customClass="FeedbackOverviewTableViewController" customModule="MapboxNavigation" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Le8-Fh-Lbq"/>
                         <viewControllerLayoutGuide type="bottom" id="1JS-iE-ETQ"/>
