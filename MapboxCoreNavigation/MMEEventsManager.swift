@@ -321,7 +321,7 @@ class FixedLengthQueue<T> {
     }
 }
 
-class CoreFeedbackEvent: Hashable {
+public class CoreFeedbackEvent: Hashable {
     var id = UUID()
     
     var timestamp: Date
@@ -333,13 +333,13 @@ class CoreFeedbackEvent: Hashable {
         self.eventDictionary = eventDictionary
     }
     
-    var hashValue: Int {
+    public var hashValue: Int {
         get {
             return id.hashValue
         }
     }
     
-    static func ==(lhs: CoreFeedbackEvent, rhs: CoreFeedbackEvent) -> Bool {
+    public static func ==(lhs: CoreFeedbackEvent, rhs: CoreFeedbackEvent) -> Bool {
         return lhs.id == rhs.id
     }
 }

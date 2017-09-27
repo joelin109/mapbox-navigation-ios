@@ -6,20 +6,38 @@
 //  Copyright © 2017 Mapbox. All rights reserved.
 //
 
+import UIKit
+import MapboxDirections
+import MapboxCoreNavigation
+
+//MARK: - View Reuse Identifier Enum
 enum ReuseIdentifier: String {
     case arrived, feedback
 }
 
-import UIKit
 
 class FeedbackDetailsTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    //MARK: - Models
+    var route: Route? {
+        didSet {
+            tableView?.reloadData()
+        }
+    }
+    
+    var feedbacks: [CoreFeedbackEvent]? {
+        didSet {
+            tableView?.reloadData()
+        }
+    }
+    
     @IBOutlet weak var doneButton: UIButton!
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableView: UITableView?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0) // Do not extend table view under status bar.
+        tableView?.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0) // Do not extend table view under status bar.
+        tableView?.reloadData()
         // Uncomment the following line to preserve selection between presentations
         
 
@@ -69,9 +87,10 @@ class FeedbackDetailsTableViewController: UIViewController, UITableViewDelegate,
  
     //MARK: - Private Cell Dequeue Methods
     private func arrivedCell(for tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeue(cell: .arrived, for: indexPath)
-        
-        return cell!
+        let cell = tableView.dequeue(cell: .arrived, for: indexPath) as! ArrivedTableViewCell
+            cell.route = route
+            cell.feedbacks = feedbacks
+        return cell
     }
    
     private func feedbackCell(for tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
@@ -81,8 +100,8 @@ class FeedbackDetailsTableViewController: UIViewController, UITableViewDelegate,
     }
     
     @IBAction func unwind(from segue: UIStoryboardSegue) {
-        if let selected: IndexPath = tableView.indexPathForSelectedRow {
-            tableView.deselectRow(at: selected, animated: false)
+        if let selected: IndexPath = tableView?.indexPathForSelectedRow {
+            tableView?.deselectRow(at: selected, animated: false)
         }
         
         

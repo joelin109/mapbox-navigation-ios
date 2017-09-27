@@ -165,7 +165,7 @@ open class RouteController: NSObject {
     public var usesDefaultUserInterface = false
     
     var sessionState:SessionState
-    var outstandingFeedbackEvents = [CoreFeedbackEvent]()
+    public var outstandingFeedbackEvents = [CoreFeedbackEvent]()
     
     var hasFoundOneQualifiedLocation = false
     
