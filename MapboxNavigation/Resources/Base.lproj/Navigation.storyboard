@@ -183,7 +183,7 @@
                                 </connections>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="8P3-NB-IRq">
-                                <rect key="frame" x="10" y="195" width="50" height="108"/>
+                                <rect key="frame" x="10" y="195" width="50" height="166"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dry-gO-T7u" customClass="MBFloatingButton">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -211,7 +211,7 @@
                                         </connections>
                                     </button>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EeE-dV-610" customClass="MBFloatingButton">
-                                        <rect key="frame" x="0.0" y="108" width="50" height="0.0"/>
+                                        <rect key="frame" x="0.0" y="116" width="50" height="50"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" priority="999" constant="50" id="o37-gV-IxI"/>
@@ -226,7 +226,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9iJ-Dv-6Im" userLabel="Feedback Details" customClass="MBFloatingButton">
-                                <rect key="frame" x="10" y="313" width="50" height="50"/>
+                                <rect key="frame" x="10" y="371" width="50" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="4XM-sH-ix9"/>
@@ -351,11 +351,11 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="617"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="arrived" rowHeight="250" id="3q2-oe-BFU" customClass="ArrivedTableViewCell" customModule="MapboxNavigation" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="250"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="arrived" id="3q2-oe-BFU" customClass="ArrivedTableViewCell" customModule="MapboxNavigation" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3q2-oe-BFU" id="Tfv-V6-hxE">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="uYv-TN-J3k">
@@ -415,24 +415,24 @@
                                             <outlet property="mapView" destination="u10-9t-k42" id="vE7-kV-qaX"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="feedback" rowHeight="70" id="uun-bj-0nj" customClass="FeedbackTableViewCell" customModule="MapboxNavigation" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="278" width="375" height="70"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="feedback" id="uun-bj-0nj" customClass="FeedbackTableViewCell" customModule="MapboxNavigation" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uun-bj-0nj" id="TRJ-gl-Sz0">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ewe-Bd-Dc5">
-                                                    <rect key="frame" x="24" y="15" width="327" height="39.5"/>
+                                                    <rect key="frame" x="24" y="15" width="327" height="13.5"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="3kT-yH-xEp">
-                                                            <rect key="frame" x="0.0" y="0.0" width="287" height="39.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="287" height="13.5"/>
                                                             <subviews>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZeR-OK-Bt9">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="287" height="31"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="287" height="10.5"/>
                                                                     <subviews>
                                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EHf-Mp-IFV" customClass="CircularView" customModule="MapboxNavigation" customModuleProvider="target">
-                                                                            <rect key="frame" x="0.0" y="8.5" width="15" height="15"/>
+                                                                            <rect key="frame" x="0.0" y="-1.5" width="15" height="15"/>
                                                                             <color key="backgroundColor" red="0.96862745100000003" green="0.56470588239999997" blue="0.1176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="height" constant="15" id="756-bM-0PZ"/>
@@ -440,7 +440,7 @@
                                                                             </constraints>
                                                                         </view>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Accident" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CBm-Ct-C1z">
-                                                                            <rect key="frame" x="25" y="0.0" width="262" height="31"/>
+                                                                            <rect key="frame" x="25" y="0.0" width="262" height="10.5"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
@@ -457,7 +457,7 @@
                                                                     </constraints>
                                                                 </view>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="14th and Randolph" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1v8-cC-vyH">
-                                                                    <rect key="frame" x="0.0" y="31" width="287" height="8.5"/>
+                                                                    <rect key="frame" x="0.0" y="10.5" width="287" height="3"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -465,7 +465,7 @@
                                                             </subviews>
                                                         </stackView>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Xp-q0-MTO">
-                                                            <rect key="frame" x="287" y="0.0" width="40" height="39.5"/>
+                                                            <rect key="frame" x="287" y="0.0" width="40" height="13.5"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="40" id="9oN-iV-kWO"/>
                                                             </constraints>

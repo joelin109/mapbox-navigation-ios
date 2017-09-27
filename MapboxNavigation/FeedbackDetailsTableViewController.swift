@@ -70,7 +70,7 @@ class FeedbackDetailsTableViewController: UIViewController, UITableViewDelegate,
                    heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.row {
         case 0:
-            return 250
+            return 300
         default:
             return 70
         }
