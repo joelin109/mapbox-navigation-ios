@@ -11,7 +11,7 @@ public class SpokenInstructionFormatter: NSObject {
     let routeStepFormatter = RouteStepFormatter()
     let maneuverVoiceDistanceFormatter = SpokenDistanceFormatter(approximate: true)
     
-    public override init() {
+    @objc public override init() {
         maneuverVoiceDistanceFormatter.unitStyle = .long
         maneuverVoiceDistanceFormatter.numberFormatter.locale = .nationalizedCurrent
     }
@@ -21,7 +21,7 @@ public class SpokenInstructionFormatter: NSObject {
      
      If `markUpWithSSML` is true, the string will contain [SSML](https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/speech-synthesis-markup-language-ssml-reference). Your speech synthesizer should accept this type of string. See `PolleyVoiceController`.
     */
-    public func string(routeProgress: RouteProgress, userDistance: CLLocationDistance, markUpWithSSML: Bool) -> String {
+    @objc public func string(routeProgress: RouteProgress, userDistance: CLLocationDistance, markUpWithSSML: Bool) -> String {
         let alertLevel = routeProgress.currentLegProgress.alertUserLevel
         
         let escapeIfNecessary = {(distance: String) -> String in

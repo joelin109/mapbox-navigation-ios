@@ -77,7 +77,7 @@ class CustomViewController: UIViewController, MGLMapViewDelegate, AVSpeechSynthe
     }
 
     // When the alert level changes, this signals the user is ready for a voice announcement
-    func alertLevelDidChange(_ notification: NSNotification) {
+    @objc func alertLevelDidChange(_ notification: NSNotification) {
         let routeProgress = notification.userInfo![RouteControllerAlertLevelDidChangeNotificationRouteProgressKey] as! RouteProgress
         let text = spokenInstructionFormatter.string(routeProgress: routeProgress, userDistance: routeProgress.currentLegProgress.currentStepProgress.distanceRemaining, markUpWithSSML: false)
 
@@ -87,7 +87,7 @@ class CustomViewController: UIViewController, MGLMapViewDelegate, AVSpeechSynthe
     }
 
     // Notifications sent on all location updates
-    func progressDidChange(_ notification: NSNotification) {
+    @objc func progressDidChange(_ notification: NSNotification) {
         let routeProgress = notification.userInfo![RouteControllerProgressDidChangeNotificationProgressKey] as! RouteProgress
         let location = notification.userInfo![RouteControllerProgressDidChangeNotificationLocationKey] as! CLLocation
         updateRouteProgress(routeProgress: routeProgress)
@@ -121,7 +121,7 @@ class CustomViewController: UIViewController, MGLMapViewDelegate, AVSpeechSynthe
 
     // Fired when the user is no longer on the route.
     // A new route should be fetched at this time.
-    func rerouted(_ notification: NSNotification) {
+    @objc func rerouted(_ notification: NSNotification) {
         speechSynth.stopSpeaking(at: .word)
 
         getRoute {

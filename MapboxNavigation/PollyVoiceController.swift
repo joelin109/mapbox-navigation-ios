@@ -17,25 +17,25 @@ public class PollyVoiceController: RouteVoiceController {
     /**
      `regionType` specifies what AWS region to use for Polly.
      */
-    public var regionType: AWSRegionType = .USEast1
+    @objc public var regionType: AWSRegionType = .USEast1
     
     /**
      `identityPoolId` is a required value for using AWS Polly voice instead of iOS's built in AVSpeechSynthesizer.
      You can get a token here: http://docs.aws.amazon.com/mobile/sdkforios/developerguide/cognito-auth-aws-identity-for-ios.html
      */
-    public var identityPoolId: String
+    @objc public var identityPoolId: String
     
     /**
      Number of seconds a Polly request can wait before it is canceled and the default speech synthesizer speaks the instruction.
      */
-    public var timeoutIntervalForRequest:TimeInterval = 2
+    @objc public var timeoutIntervalForRequest:TimeInterval = 2
     
     var pollyTask: URLSessionDataTask?
     
     let sessionConfiguration = URLSessionConfiguration.default
     var urlSession: URLSession
     
-    public init(identityPoolId: String) {
+    @objc public init(identityPoolId: String) {
         self.identityPoolId = identityPoolId
         
         let credentialsProvider = AWSCognitoCredentialsProvider(regionType: regionType, identityPoolId: identityPoolId)
@@ -48,7 +48,7 @@ public class PollyVoiceController: RouteVoiceController {
         super.init()
     }
     
-    public override func alertLevelDidChange(notification: NSNotification) {
+    @objc public override func alertLevelDidChange(notification: NSNotification) {
         guard shouldSpeak(for: notification) == true else { return }
         
         let routeProgresss = notification.userInfo![RouteControllerAlertLevelDidChangeNotificationRouteProgressKey] as! RouteProgress

@@ -46,12 +46,12 @@ open class NavigationMapView: MGLMapView {
         }
     }
     
-    dynamic public var trafficUnknownColor: UIColor = .trafficUnknown
-    dynamic public var trafficLowColor: UIColor = .trafficLow
-    dynamic public var trafficModerateColor: UIColor = .trafficModerate
-    dynamic public var trafficHeavyColor: UIColor = .trafficHeavy
-    dynamic public var trafficSevereColor: UIColor = .trafficSevere
-    dynamic public var routeCasingColor: UIColor = .defaultRouteCasing
+    @objc dynamic public var trafficUnknownColor: UIColor = .trafficUnknown
+    @objc dynamic public var trafficLowColor: UIColor = .trafficLow
+    @objc dynamic public var trafficModerateColor: UIColor = .trafficModerate
+    @objc dynamic public var trafficHeavyColor: UIColor = .trafficHeavy
+    @objc dynamic public var trafficSevereColor: UIColor = .trafficSevere
+    @objc dynamic public var routeCasingColor: UIColor = .defaultRouteCasing
     
     var showsRoute: Bool {
         get {
@@ -65,7 +65,7 @@ open class NavigationMapView: MGLMapView {
         }
     }
     
-    public weak var navigationMapDelegate: NavigationMapViewDelegate? {
+    @objc public weak var navigationMapDelegate: NavigationMapViewDelegate? {
         didSet {
             refreshShowsUserLocation()
         }
@@ -143,7 +143,7 @@ open class NavigationMapView: MGLMapView {
     /**
      Removes route line and route line casing from map
      */
-    public func removeRoute() {
+    @objc public func removeRoute() {
         guard let style = style else {
             return
         }
@@ -168,7 +168,7 @@ open class NavigationMapView: MGLMapView {
     /**
      Adds the route waypoints to the map given the current leg index. Previous waypoints for completed legs will be omitted.
      */
-    public func showWaypoints(_ route: Route, legIndex: Int = 0) {
+    @objc public func showWaypoints(_ route: Route, legIndex: Int = 0) {
         guard let style = style else {
             return
         }
@@ -205,7 +205,7 @@ open class NavigationMapView: MGLMapView {
     /**
      Removes all waypoints from the map.
      */
-    public func removeWaypoints() {
+    @objc public func removeWaypoints() {
         guard let style = style else { return }
         
         removeAnnotations(annotations ?? [])
@@ -389,7 +389,7 @@ open class NavigationMapView: MGLMapView {
     /**
      Shows the step arrow given the current `RouteProgress`.
      */
-    public func addArrow(route: Route, legIndex: Int, stepIndex: Int) {
+    @objc public func addArrow(route: Route, legIndex: Int, stepIndex: Int) {
         guard route.legs.indices.contains(legIndex),
             route.legs[legIndex].steps.indices.contains(stepIndex) else { return }
         

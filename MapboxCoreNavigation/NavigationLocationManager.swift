@@ -17,13 +17,13 @@ open class NavigationLocationManager: CLLocationManager {
     /**
      Indicates whether the device is plugged in or not.
      */
-    public private(set) var isPluggedIn: Bool = false
+    @objc public private(set) var isPluggedIn: Bool = false
     
     /**
      Indicates whether the location manager’s desired accuracy should update
      when the battery state changes.
      */
-    public var automaticallyUpdatesDesiredAccuracy = true
+    @objc public var automaticallyUpdatesDesiredAccuracy = true
     
     override public init() {
         super.init()

@@ -167,7 +167,7 @@ public class NavigationViewController: NavigationPulleyViewController, RouteMapV
      
      In cases where you need to update the route after navigation has started you can set a new `route` here and `NavigationViewController` will update its UI accordingly.
      */
-    public var route: Route! {
+    @objc public var route: Route! {
         didSet {
             if routeController == nil {
                 routeController = RouteController(along: route, directions: directions, locationManager: NavigationLocationManager())
@@ -190,22 +190,22 @@ public class NavigationViewController: NavigationPulleyViewController, RouteMapV
     /**
      An instance of `Directions` need for rerouting. See [Mapbox Directions](https://mapbox.github.io/mapbox-navigation-ios/directions/) for further information.
      */
-    public var directions: Directions!
+    @objc public var directions: Directions!
     
     /**
      An optional `MGLMapCamera` you can use to improve the initial transition from a previous viewport and prevent a trigger from an excessive significant location update.
      */
-    public var pendingCamera: MGLMapCamera?
+    @objc public var pendingCamera: MGLMapCamera?
     
     /**
      An instance of `MGLAnnotation` representing the origin of your route.
      */
-    public var origin: MGLAnnotation?
+    @objc public var origin: MGLAnnotation?
     
     /**
      The receiver’s delegate.
      */
-    public weak var navigationDelegate: NavigationViewControllerDelegate? {
+    @objc public weak var navigationDelegate: NavigationViewControllerDelegate? {
         didSet {
             mapViewController?.delegate = mapViewController?.delegate
         }
@@ -216,21 +216,21 @@ public class NavigationViewController: NavigationPulleyViewController, RouteMapV
      
      See `RouteVoiceController` for more information.
      */
-    public var voiceController: RouteVoiceController? = RouteVoiceController()
+    @objc public var voiceController: RouteVoiceController? = RouteVoiceController()
     
     /**
      Provides all routing logic for the user.
 
      See `RouteController` for more information.
      */
-    public var routeController: RouteController!
+    @objc public var routeController: RouteController!
     
     /**
      Styles that will be used for various system traits.
      
      See `Style` and `DefaultStyle` for more information.
      */
-    public var styles: [Style]? {
+    @objc public var styles: [Style]? {
         didSet {
             applyStyle()
         }
@@ -241,7 +241,7 @@ public class NavigationViewController: NavigationPulleyViewController, RouteMapV
      
      Note that you should not change the `mapView`'s delegate.
      */
-    public var mapView: MGLMapView? {
+    @objc public var mapView: MGLMapView? {
         get {
             return mapViewController?.mapView
         }
@@ -252,7 +252,7 @@ public class NavigationViewController: NavigationPulleyViewController, RouteMapV
      
      By default, this property is set to `true`, causing the user location annotation to be snapped to the route.
      */
-    public var snapsUserLocationAnnotationToRoute = true {
+    @objc public var snapsUserLocationAnnotationToRoute = true {
         didSet {
             mapViewController?.snapsUserLocationAnnotationToRoute = snapsUserLocationAnnotationToRoute
         }
@@ -261,17 +261,17 @@ public class NavigationViewController: NavigationPulleyViewController, RouteMapV
     /**
      Toggles sending of UILocalNotification upon upcoming steps when application is in the background. Defaults to `true`.
      */
-    public var sendNotifications: Bool = true
+    @objc public var sendNotifications: Bool = true
     
     /**
      Shows a button that allows drivers to report feedback such as accidents, closed roads,  poor instructions, etc. Defaults to `false`.
      */
-    public var showsReportFeedback: Bool = true
+    @objc public var showsReportFeedback: Bool = true
     
     /**
      If true, the map style and UI will automatically be updated given the time of day.
      */
-    public var automaticallyAdjustsStyleForTimeOfDay = true
+    @objc public var automaticallyAdjustsStyleForTimeOfDay = true
     
     var currentStyleType: StyleType?
     
@@ -388,7 +388,7 @@ public class NavigationViewController: NavigationPulleyViewController, RouteMapV
         self.delegate = self
     }
     
-    public override func viewWillAppear(_ animated: Bool) {
+    @objc public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         UIApplication.shared.isIdleTimerDisabled = true
@@ -403,7 +403,7 @@ public class NavigationViewController: NavigationPulleyViewController, RouteMapV
         }
     }
     
-    public override func viewWillDisappear(_ animated: Bool) {
+    @objc public override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
         UIApplication.shared.isIdleTimerDisabled = false
@@ -424,7 +424,7 @@ public class NavigationViewController: NavigationPulleyViewController, RouteMapV
         NotificationCenter.default.removeObserver(self, name: RouteControllerAlertLevelDidChange, object: routeController)
     }
     
-    func progressDidChange(notification: NSNotification) {
+    @objc func progressDidChange(notification: NSNotification) {
         resetETATimer()
         
         let routeProgress = notification.userInfo![RouteControllerAlertLevelDidChangeNotificationRouteProgressKey] as! RouteProgress
@@ -436,7 +436,7 @@ public class NavigationViewController: NavigationPulleyViewController, RouteMapV
         progressBar.progress = routeProgress.currentLegProgress.alertUserLevel == .arrive ? 1 : CGFloat(routeProgress.fractionTraveled)
     }
     
-    func alertLevelDidChange(notification: NSNotification) {
+    @objc func alertLevelDidChange(notification: NSNotification) {
         let routeProgress = notification.userInfo![RouteControllerAlertLevelDidChangeNotificationRouteProgressKey] as! RouteProgress
         let alertLevel = routeProgress.currentLegProgress.alertUserLevel
         
@@ -473,7 +473,7 @@ public class NavigationViewController: NavigationPulleyViewController, RouteMapV
         }
     }
     
-    func updateETA() {
+    @objc func updateETA() {
         tableViewController?.updateETA(routeProgress: routeController.routeProgress)
     }
     
@@ -580,19 +580,19 @@ public class NavigationViewController: NavigationPulleyViewController, RouteMapV
 }
 
 extension NavigationViewController: RouteControllerDelegate {
-    public func routeController(_ routeController: RouteController, shouldRerouteFrom location: CLLocation) -> Bool {
+    @objc public func routeController(_ routeController: RouteController, shouldRerouteFrom location: CLLocation) -> Bool {
         return navigationDelegate?.navigationViewController?(self, shouldRerouteFrom: location) ?? true
     }
     
-    public func routeController(_ routeController: RouteController, shouldIncrementLegWhenArrivingAtWaypoint waypoint: Waypoint) -> Bool {
+    @objc public func routeController(_ routeController: RouteController, shouldIncrementLegWhenArrivingAtWaypoint waypoint: Waypoint) -> Bool {
         return navigationDelegate?.navigationViewController?(self, shouldIncrementLegWhenArrivingAtWaypoint: waypoint) ?? true
     }
     
-    public func routeController(_ routeController: RouteController, willRerouteFrom location: CLLocation) {
+    @objc public func routeController(_ routeController: RouteController, willRerouteFrom location: CLLocation) {
         navigationDelegate?.navigationViewController?(self, willRerouteFrom: location)
     }
     
-    public func routeController(_ routeController: RouteController, didRerouteAlong route: Route) {
+    @objc public func routeController(_ routeController: RouteController, didRerouteAlong route: Route) {
         let routeProgress = routeController.routeProgress
         scheduleLocalNotification(about: routeProgress.currentLegProgress.currentStep, legIndex: routeProgress.legIndex, numberOfLegs: route.legs.count)
         
@@ -603,11 +603,11 @@ extension NavigationViewController: RouteControllerDelegate {
         navigationDelegate?.navigationViewController?(self, didRerouteAlong: route)
     }
     
-    public func routeController(_ routeController: RouteController, didFailToRerouteWith error: Error) {
+    @objc public func routeController(_ routeController: RouteController, didFailToRerouteWith error: Error) {
         navigationDelegate?.navigationViewController?(self, didFailToRerouteWith: error)
     }
     
-    public func routeController(_ routeController: RouteController, didUpdate locations: [CLLocation]) {
+    @objc public func routeController(_ routeController: RouteController, didUpdate locations: [CLLocation]) {
         mapViewController?.mapView.locationManager(routeController.locationManager, didUpdateLocations: locations)
         
         if !(routeController.locationManager is SimulatedLocationManager) {
@@ -615,7 +615,7 @@ extension NavigationViewController: RouteControllerDelegate {
         }
     }
     
-    public func routeController(_ routeController: RouteController, didDiscard location: CLLocation) {
+    @objc public func routeController(_ routeController: RouteController, didDiscard location: CLLocation) {
         let title = NSLocalizedString("WEAK_GPS", bundle: .mapboxNavigation, value: "Weak GPS signal", comment: "Inform user about weak GPS signal")
         mapViewController?.statusView.show(title, showSpinner: false)
     }
@@ -632,7 +632,7 @@ extension NavigationViewController: RouteTableViewHeaderViewDelegate {
 }
 
 extension NavigationViewController: PulleyDelegate {
-    public func drawerPositionDidChange(drawer: PulleyViewController) {
+    @objc public func drawerPositionDidChange(drawer: PulleyViewController) {
         switch drawer.drawerPosition {
         case .open:
             tableViewController?.tableView.isScrollEnabled = true
