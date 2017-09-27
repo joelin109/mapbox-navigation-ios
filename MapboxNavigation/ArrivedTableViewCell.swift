@@ -16,14 +16,14 @@ class ArrivedTableViewCell: UITableViewCell, MGLMapViewDelegate {
     @IBOutlet weak var feedbacksAdded: UILabel!
     @IBOutlet weak var mapView: NavigationMapView!
     
-    static let mapInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+    static let mapInsets = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
     
     override func awakeFromNib() {
         mapView.delegate = self
     }
     var route: Route?
     
-    var feedbacks: [CoreFeedbackEvent]? {
+    var feedbacks: [FeedbackEvent]? {
         didSet {
             guard let feedbacks = feedbacks else { return }
             updateFeedbacks(with: feedbacks)
@@ -47,5 +47,17 @@ class ArrivedTableViewCell: UITableViewCell, MGLMapViewDelegate {
     func mapView(_ mapView: MGLMapView, didFinishLoading style: MGLStyle) {
         guard let route = route else { return }
         updateMap(with: route)
+        
+        if let annotations: [MGLAnnotation] = feedbacks?.flatMap(MGLPointAnnotation.init(feedback:)) {
+            mapView.addAnnotations(annotations)
+        }
+    }
+}
+
+fileprivate extension MGLPointAnnotation {
+    convenience init?(feedback: FeedbackEvent) {
+        guard let coord = feedback.coordinate else { return nil }
+        self.init()
+        self.coordinate = coord
     }
 }

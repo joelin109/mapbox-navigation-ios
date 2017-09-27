@@ -25,7 +25,7 @@ class FeedbackDetailsTableViewController: UIViewController, UITableViewDelegate,
         }
     }
     
-    var feedbacks: [CoreFeedbackEvent]? {
+    var feedbacks: [FeedbackEvent]? {
         didSet {
             tableView?.reloadData()
         }
@@ -57,13 +57,13 @@ class FeedbackDetailsTableViewController: UIViewController, UITableViewDelegate,
     // MARK: - Table view data source
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 2
+        guard let feedbacks = feedbacks else { return 1 } // If we have no feedbacks, show only the arrival cell.
+        
+        return feedbacks.count + 1
     }
     
     func tableView(_ tableView: UITableView,
@@ -72,10 +72,14 @@ class FeedbackDetailsTableViewController: UIViewController, UITableViewDelegate,
         case 0:
             return 300
         default:
-            return 70
+            return feedbacks != nil ? 70 : 0
         }
     }
 
+    func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
+        return indexPath.row >= 1
+    }
+ 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.row {
         case 0:
@@ -94,9 +98,9 @@ class FeedbackDetailsTableViewController: UIViewController, UITableViewDelegate,
     }
    
     private func feedbackCell(for tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeue(cell: .feedback, for: indexPath)
-        
-        return cell!
+        let cell = tableView.dequeue(cell: .feedback, for: indexPath) as! FeedbackTableViewCell
+        cell.feedback = feedbacks?[indexPath.row - 1]
+        return cell
     }
     
     @IBAction func unwind(from segue: UIStoryboardSegue) {

@@ -208,7 +208,7 @@ class RouteMapViewController: UIViewController {
         case "FeedbackDetailsTableViewController":
             if let navCon = segue.destination as? UINavigationController, let destination = navCon.viewControllers.first as? FeedbackDetailsTableViewController {
                 destination.route = route
-                destination.feedbacks = routeController.outstandingFeedbackEvents
+                destination.feedbacks = routeController.feedbackEvents 
             }
         default:
             break
