@@ -364,6 +364,11 @@
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u10-9t-k42" userLabel="Map" customClass="MBNavigationMapView">
                                                             <rect key="frame" x="0.0" y="0.0" width="326" height="137.5"/>
                                                             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                    <integer key="value" value="10"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
                                                         </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Jq-47-unS" userLabel="Labels">
                                                             <rect key="frame" x="0.0" y="161.5" width="326" height="40"/>
