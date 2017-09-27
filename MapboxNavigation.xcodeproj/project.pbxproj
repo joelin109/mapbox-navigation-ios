@@ -121,7 +121,7 @@
 		35DC9D911F4323AA001ECD64 /* LanesContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DC9D901F4323AA001ECD64 /* LanesContainerView.swift */; };
 		35E407681F5625FF00EFC814 /* StyleKitMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E407671F5625FF00EFC814 /* StyleKitMarker.swift */; };
 		35F611C41F1E1C0500C43249 /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F611C31F1E1C0500C43249 /* FeedbackViewController.swift */; };
-		437287421F7AF0810039229F /* FeedbackDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437287411F7AF0810039229F /* FeedbackDetailsTableViewController.swift */; };
+		437287421F7AF0810039229F /* FeedbackOverviewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437287411F7AF0810039229F /* FeedbackOverviewTableViewController.swift */; };
 		43AA0E321F7AFD10007D0AB1 /* FeedbackEventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AA0E311F7AFD10007D0AB1 /* FeedbackEventTableViewController.swift */; };
 		43F12A5F1F7B0344007770B7 /* ArrivedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F12A5E1F7B0344007770B7 /* ArrivedTableViewCell.swift */; };
 		43F12A611F7B0352007770B7 /* FeedbackTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F12A601F7B0352007770B7 /* FeedbackTableViewCell.swift */; };
@@ -415,7 +415,7 @@
 		35DC9D901F4323AA001ECD64 /* LanesContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanesContainerView.swift; sourceTree = "<group>"; };
 		35E407671F5625FF00EFC814 /* StyleKitMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleKitMarker.swift; sourceTree = "<group>"; };
 		35F611C31F1E1C0500C43249 /* FeedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackViewController.swift; sourceTree = "<group>"; };
-		437287411F7AF0810039229F /* FeedbackDetailsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackDetailsTableViewController.swift; sourceTree = "<group>"; };
+		437287411F7AF0810039229F /* FeedbackOverviewTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackOverviewTableViewController.swift; sourceTree = "<group>"; };
 		43AA0E311F7AFD10007D0AB1 /* FeedbackEventTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackEventTableViewController.swift; sourceTree = "<group>"; };
 		43F12A5E1F7B0344007770B7 /* ArrivedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrivedTableViewCell.swift; sourceTree = "<group>"; };
 		43F12A601F7B0352007770B7 /* FeedbackTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackTableViewCell.swift; sourceTree = "<group>"; };
@@ -761,7 +761,7 @@
 		43F12A5D1F7B030A007770B7 /* EOR Feedback */ = {
 			isa = PBXGroup;
 			children = (
-				437287411F7AF0810039229F /* FeedbackDetailsTableViewController.swift */,
+				437287411F7AF0810039229F /* FeedbackOverviewTableViewController.swift */,
 				43AA0E311F7AFD10007D0AB1 /* FeedbackEventTableViewController.swift */,
 				43F12A5E1F7B0344007770B7 /* ArrivedTableViewCell.swift */,
 				43F12A621F7B075B007770B7 /* CircularView.swift */,
@@ -1377,7 +1377,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				351BEBF11E5BCC63006FE110 /* MGLMapView.swift in Sources */,
-				437287421F7AF0810039229F /* FeedbackDetailsTableViewController.swift in Sources */,
+				437287421F7AF0810039229F /* FeedbackOverviewTableViewController.swift in Sources */,
 				352BBC421E5E72C500703DF1 /* Geometry.swift in Sources */,
 				43F12A611F7B0352007770B7 /* FeedbackTableViewCell.swift in Sources */,
 				351BEC061E5BCC6C006FE110 /* ManeuverDirection.swift in Sources */,
