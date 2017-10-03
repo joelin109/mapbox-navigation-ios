@@ -155,3 +155,8 @@ public var RouteControllerMaximumSpeedForLocationSnapping: CLLocationSpeed = 3
  The minimum distance threshold used for giving a "Continue" type instructions.
  */
 public var RouteControllerMinDistanceForContinueInstruction: CLLocationDistance = 2_000
+
+/**
+ Distance in the opposite direction of travel before a reroute occurs.
+ */
+public var RouteControllerMinDistanceForBackwardsProgressReroute: CLLocationDistance = 50

@@ -563,7 +563,8 @@ extension RouteController: CLLocationManagerDelegate {
         if let coordinates = routeProgress.currentLegProgress.currentStep.coordinates {
             let userDistanceToManeuver = Polyline(coordinates).distance(from: location.coordinate)
             
-            guard recentDistancesFromManeuver.count <= 6 else {
+            let totalDistances = recentDistancesFromManeuver.reduce(0) { $0 + $1 }
+            guard recentDistancesFromManeuver.count <= 3, totalDistances < RouteControllerMinDistanceForBackwardsProgressReroute else {
                 return false
             }
             
