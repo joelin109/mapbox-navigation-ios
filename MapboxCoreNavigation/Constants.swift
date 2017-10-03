@@ -149,7 +149,7 @@ let milesToMeters = 1609.34
 /**
  The minimum speed value before the user's actual location can be considered over the snapped location.
  */
-public var RouteControllerMaximumSpeedForLocationSnapping: CLLocationSpeed = 3
+public var RouteControllerMinSpeedForLocationSnapping: CLLocationSpeed = 3
 
 /**
  The minimum distance threshold used for giving a "Continue" type instructions.
